@@ -10,4 +10,12 @@ defmodule ExMon.Game.Status do
         IO.puts "---------------------"
     end
 
+    def print_wrong_move_message(move) do
+        IO.puts "---------------------"
+        IO.puts "Wrong move: #{move}"
+        IO.puts "---------------------"
+    end
+
+    
+
 end
