@@ -1,7 +1,7 @@
 defmodule ExMon do
   
   alias ExMon.{Game, Player}
-  alias ExMon.Game.Status
+  alias ExMon.Game.{Actions, Status}
 
   @computer_name "Robot"
 
@@ -16,5 +16,14 @@ defmodule ExMon do
 
     Status.print_round_message()
   end
+
+  def make_move(move) do
+    move
+    |> Actions.fetch_move()
+    |> do_move()
+  end
+
+
+  defp do_move({:error, move}) do Status.print_wrong_move_message(move) end
 
 end
