@@ -19,4 +19,6 @@ defmodule ExMon.Game do
     end
     
 
+    def player, do: Map.get(info(), :player)
+
 end
